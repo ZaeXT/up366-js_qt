@@ -10,17 +10,13 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWidget>
-
 std::string js_regex(std::string);
-
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-
     // 创建一个文本输入框
     QPlainTextEdit textInput;
     textInput.setPlaceholderText("请粘贴page1.js内的文本");
-
     // 创建一个按钮
     QPushButton saveButton("解析");
     QString inputText, aw;
@@ -29,10 +25,9 @@ int main(int argc, char *argv[])
                      {
         // 获取文本输入框的内容
     inputText = textInput.toPlainText();
-
         // 在这里可以将输入内容保存到文件或数据库中
         // 这里只是简单地弹出一个消息框显示输入内容
-QMessageBox::information(nullptr, "解析成功", "输入内容已解析!");
+    QMessageBox::information(nullptr, "解析成功", "输入内容已解析!");
     aw = QString::fromStdString(js_regex(inputText.toStdString()));
     QMessageBox::information(nullptr, "Answer", aw);
     // qDebug() << js_regex(inputText.toStdString());
