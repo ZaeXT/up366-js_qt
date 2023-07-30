@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 
     // 创建一个文本输入框
     QPlainTextEdit textInput;
+    textInput.setPlaceholderText("请粘贴page1.js内的文本");
 
     // 创建一个按钮
     QPushButton saveButton("解析");
